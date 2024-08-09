@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Counter from "./components/Counter";
 import Button from "./components/Button";
+import ResetButton from "./components/ResetButton";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,7 +20,10 @@ function App() {
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
       <Button onClick={incrementCount} />
-      {/* if count > 0 -> show button */}
+
+      <ResetButton onClick={resetCount} count={count} />
+
+      {/* if count > 0 -> show button or use double not(!!count === count > 0
       {count > 0 && (
         <div>
           <button
@@ -29,7 +33,7 @@ function App() {
             Reset
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
